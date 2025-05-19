@@ -1,0 +1,103 @@
+/* 모든 요소에 대한 기본 스타일 리셋 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, main, menu, nav, section {
+  display: block;
+}
+
+/* 기본 폰트 설정 및 라인 높이 */
+html {
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+body {
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+  font-family: 'SUIT Variable', sans-serif;
+}
+
+/* 목록 스타일 제거 */
+ol, ul {
+  list-style: none;
+}
+
+/* 테이블 경계선 제거 */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* 하이퍼링크 스타일 정상화 */
+a {
+  text-decoration: none;
+  color: inherit;
+  background-color: transparent;
+}
+
+a:active,
+a:hover {
+  outline: 0;
+}
+
+/* 이미지, 미디어 등의 요소 정렬 */
+img, video, canvas, audio, iframe, embed, object {
+  display: block;
+  max-width: 100%;
+}
+
+/* 버튼 및 입력 요소 정규화 */
+button,
+input,
+optgroup,
+select,
+textarea {
+  font: inherit;
+  color: inherit;
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+  background: transparent;
+}
+
+button {
+  cursor: pointer;
+}
+
+/* 숨겨진 요소 설정 */
+[hidden] {
+  display: none !important;
+}
+
+/* 선택 텍스트 스타일 */
+::selection {
+  background-color: #b3d4fc;
+  color: #000;
+  text-shadow: none;
+}
+
+/* 스크롤바 숨기기 */
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* 포커스 관련 스타일 (접근성 보장) */
+:focus {
+  outline: thin dotted;
+}
+
+:focus:not(:focus-visible) {
+  outline: 0;
+}
+
+:focus-visible {
+  outline: 2px solid #4d90fe;
+}
