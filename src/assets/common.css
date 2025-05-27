@@ -1,3 +1,20 @@
+@charset "utf-8";
+/* Info
+ ========================================================================== */
+/**
+ * 1. Writer: Sunhyeong Kim
+ * 2. Production Date: 2025-05-22
+ */
+
+:root {
+	/* color */
+	--point-color: #c39449;
+	--blue-color: #1d3461;
+	--red-color: #722f37;
+    --green-color: #7d8c75;
+	--white-color: #f5f0e1;
+}
+
 .sr-only {
     position: absolute;
     width: 1px;
@@ -19,19 +36,126 @@
     will-change: transform;
     outline: 0;
 }
+section {
+    position: relative;
+    width: 100%;
+}
 
-/*
-btn-navi + aside
-================================*/
+/* header
+ ========================================================================== */
+/* header-top */
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: clamp(20px, 2vw, 30px) clamp(20px, 2vw, 30px) 0 clamp(20px, 2vw, 30px);
+    background-color: var(--white-color);
+    font-size: 20px;
+    line-height: 2.5;
+    font-weight: 500;
+}
+.top-bar h1 {
+    display: flex;
+    gap: 4px;
+    font-size: inherit;
+    line-height: inherit;
+    font-weight: inherit;
+    cursor: pointer;
+}
+.top-bar .code-by {
+    width: 140px;
+    overflow: hidden;
+}
+.top-bar .code-by .txt-wrap {
+    display: flex;
+    transform: translateX(-100%);
+    transition: transform 600ms;
+}
+.top-bar .code-by span {
+    display: block;
+    width: 140px;
+    flex-shrink: 0;
+}
+.top-bar ul {
+    display: flex;
+}
+.top-bar ul li a {
+    position: relative;
+    display: block;
+    padding: 0 1em;
+    font-size: inherit;
+    line-height: inherit;
+    font-weight: inherit;   
+}
+.top-bar ul li a::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: -1px;
+    left: 50%;
+    margin-left: -3px;
+    width: 6px;
+    height: 6px;
+    background-color: #111;
+    border-radius: 50%;
+    transform: scale(0);
+    transition: transform 300ms;
+    -webkit-transition: transform 300ms;
+    -moz-transition: transform 300ms;
+    -ms-transition: transform 300ms;
+    -o-transition: transform 300ms;
+}
+.top-bar h1 .credit {
+    transition: transform 600ms;
+    -webkit-transition: transform 600ms;
+    -moz-transition: transform 600ms;
+    -ms-transition: transform 600ms;
+    -o-transition: transform 600ms;
+}
+@media (hover: hover) {
+    .top-bar h1:hover .credit {
+        transform: rotate(360deg);
+        -webkit-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+}
+    .top-bar h1:hover .code-by .txt-wrap {
+        transform: translateX(0%);
+}
+    .top-bar ul li a:hover::after {
+        transform: scale(1);
+        -webkit-transform: scale(1);
+        -moz-transform: scale(1);
+        -ms-transform: scale(1);
+        -o-transform: scale(1);
+    }
+}
+
 /* btn-navi */
 .btn-navi {
     position: fixed;
     top: clamp(20px, 2vw, 30px);
     right: clamp(20px, 2vw, 30px);
     z-index: 100;
-    transition: transform .4s cubic-bezier(0.34, 1.5, 0.64, 1);
+    transform: scale(0);
+    transition: transform .3s;
+    -webkit-transition: transform .3s;
+    -moz-transition: transform .3s;
+    -ms-transition: transform .3s;
+    -o-transition: transform .3s;
+}
+.scroll .btn-navi {
+    transform: scale(1);
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
 }
 .btn-navi .btn-click {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 100px;
     height: 100px;
     background-color: #111;
@@ -78,23 +202,95 @@ btn-navi + aside
     top: 100%;
     transform: translate(-50%, -50%);
 }
-
-.btn-navi.open .btn-bars::before {
+header.open .btn-navi {
+    transform: scale(1);
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+}
+header.open .btn-navi .btn-bars::before {
     top: 50%;
     transform: translate(-50%, -50%) rotate(-45deg);
 }
 
-.btn-navi.open .btn-click {
-    background-color: #ff4444;  
+header.open .btn-navi .btn-click {
+    background-color: var(--point-color);  
 }
 
-.btn-navi.open .btn-bars::after {
+header.open .btn-navi .btn-bars::after {
     top: 50%;
     transform: translate(-50%, -50%) rotate(45deg);
 }
 
 @media (hover: hover) {
     .btn-navi .btn-click:hover {
-        background-color: #ff4444;
+        background-color: var(--point-color);
+    }
+}
+
+.aside {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 30vw;
+    height: 100vh;
+    background-color: #111;
+    z-index: 99;
+    transform: translate(calc(100% + 6vw), 0) rotate(0.001deg);
+    transition: transform .8s cubic-bezier(.7, 0, .2, 1);
+    will-change: transform;
+}
+.aside-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 15vh 0 10vh 7.5vw;
+}
+header.open .aside {
+    transform: translate(0, 0) rotate(0.001deg);
+    -webkit-transform: translate(0, 0) rotate(0.001deg);
+    -moz-transform: translate(0, 0) rotate(0.001deg);
+    -ms-transform: translate(0, 0) rotate(0.001deg);
+    -o-transform: translate(0, 0) rotate(0.001deg);
+}
+.aside-top li a {
+    position: relative;
+    display: inline-block;
+    font-size: calc(clamp(52px, 5vw, 64px) * .875);
+    font-weight: 600;
+    line-height: 1.5;
+    color: #fff;
+    text-decoration: none;
+    will-change: transform;
+}
+.aside-top li:not(:last-child) a {
+    margin-bottom: 0.2em;
+}
+.aside-top li a::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: -0.6em;
+    margin-top: -0.1em;
+    width: 0.2em;
+    height: 0.2em;
+    background-color: #fff;
+    border-radius: 50%;
+    transform: scale(0);
+    transition: transform 300ms;
+    -webkit-transition: transform 300ms;
+    -moz-transition: transform 300ms;
+    -ms-transition: transform 300ms;
+    -o-transition: transform 300ms;
+}
+@media (hover: hover) {
+    .aside-top li a:hover::after {
+        transform: scale(1);
+        -webkit-transform: scale(1);
+        -moz-transform: scale(1);
+        -ms-transform: scale(1);
+        -o-transform: scale(1);
     }
 }
