@@ -53,6 +53,24 @@
     background-repeat: no-repeat;
     background-position: center;
 }
+.produce-wrap {
+    display: inline-block;
+    position: absolute;
+    top: 28%;
+    right: 25%;
+}
+.produce-wrap svg {
+    transform: scale(1.5);
+    -webkit-transform: scale(1.5);
+    -moz-transform: scale(1.5);
+    -ms-transform: scale(1.5);
+    -o-transform: scale(1.5);
+}
+.produce-wrap p {
+    margin-top: 1.2em;
+    font-size: 1.5vw;
+    font-weight: 600;
+}
 
 /* section 2 : work-sec
  ========================================================================== */
