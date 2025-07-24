@@ -113,11 +113,16 @@ function App() {
             </div>
           </div>
           <div className="work-list">
-            <div className="work-item">
+            <a href='#' target='_blank' title="라보에이치몰 사이트로 이동" className="work-item">
               <div className="work-item-inner">
-                
+                <div className="work-tit"><p>라보에이치</p><span>2025</span></div>
+                <div className="work-tag-wrap">
+                  <span className="tag">cafe24</span>
+                  <span className="tag">플랫폼</span>
+                  <span className="tag">적응형</span>
+                </div>
               </div>
-            </div>
+            </a>
           </div>
         </div>
       </section>
