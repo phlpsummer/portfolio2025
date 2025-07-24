@@ -40,6 +40,15 @@ section {
     position: relative;
     width: 100%;
 }
+.section-inner {
+    max-width: 1920px;
+    margin: 0 auto;
+    padding: 150px 0px;
+}
+
+input:focus {
+    outline: 0;
+}
 
 /* header
  ========================================================================== */

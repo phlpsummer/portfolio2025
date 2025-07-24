@@ -106,6 +106,19 @@ function App() {
       <section className="work-sec" style={{height: '100vh'}}>
         <div className="section-inner">
           <h2 className="sr-only">Work</h2>
+          <p className="intro">아스팔트 속 피어난 꽃처럼 어떤 환경에서든 적응하며 가치를 만들어내는,<br/>3년 경험의 웹퍼블리셔입니다. 항상 사용자 경험과 웹 표준을 최우선으로 지향합니다.</p>
+          <div className="search-box-wrap">
+            <div className="search-box magnetic">
+              <input type="text" placeholder="Search works..." />
+            </div>
+          </div>
+          <div className="work-list">
+            <div className="work-item">
+              <div className="work-item-inner">
+                
+              </div>
+            </div>
+          </div>
         </div>
       </section>
     </>
